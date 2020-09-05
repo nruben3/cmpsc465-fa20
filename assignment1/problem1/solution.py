@@ -58,7 +58,8 @@ for i in new_array:
     print(str(i), end=' ')
 print()
 
-sys.stdout = open("assignment1/problem1/my-output-1.txt", "w")
+output_file_name = "assignment1/problem1/" + sys.argv[2]
+sys.stdout = open(output_file_name, "w")
 for i in new_array:
     print(str(i), end=' ')
 print()

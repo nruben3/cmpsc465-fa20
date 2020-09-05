@@ -1,10 +1,13 @@
 import sys
 
-array_file_name = sys.argv[1]
-array_file = open(array_file_name, 'r')
+#array_file_name = sys.argv[1]
+#array_file = open(array_file_name, 'r')
 
-amount_of_integers = array_file.readline()
-array_text = array_file.readline()
+#amount_of_integers = array_file.readline()
+#array_text = array_file.readline()
+
+amount_of_integers = input()
+array_text = input()
 
 def make_list(array_text):
     array = []
@@ -59,10 +62,10 @@ for i in array:
     print(str(i), end=' ')
 print()
 
-output_file_name = "assignment1/problem2/" + sys.argv[2]
-sys.stdout = open(output_file_name, "w")
-for i in array:
-    print(str(i), end=' ')
-print()
+#output_file_name = "assignment1/problem2/" + sys.argv[2]
+#sys.stdout = open(output_file_name, "w")
+#for i in array:
+#    print(str(i), end=' ')
+#print()
 
-sys.stdout = sys.__stdout__
+#sys.stdout = sys.__stdout__

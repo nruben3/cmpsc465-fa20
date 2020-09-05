@@ -1,10 +1,13 @@
 import sys
 
-array_file_name = sys.argv[1]
-array_file = open(array_file_name, 'r')
+#array_file_name = sys.argv[1]
+#array_file = open(array_file_name, 'r')
 
-array1_text = array_file.readline()
-array2_text = array_file.readline()
+#array1_text = array_file.readline()
+#array2_text = array_file.readline()
+
+array1_text = input()
+array2_text = input()
 
 def make_list(array_text):
     array = []
@@ -15,56 +18,61 @@ def make_list(array_text):
 array1 = make_list(array1_text)
 array2 = make_list(array2_text)
 
-new_array = []
+array = array1 + array2
 
-def place_in_array(new_array, number):
-    placed = False
-    index = 0
-    while placed == False:
-        if len(new_array) == index:
-            new_array.append(number)
-            placed = True
-        elif len(new_array) == 1:
-            if number >= new_array[index]:
-                new_array.append(number)
-            else:
-                new_array.insert(index, number)
-            placed = True
-        elif index == 0:
-            if number < new_array[index+1]:
-                new_array.insert(index, number)
-                placed = True
-            else:
-                index += 1
-        else:
-            if number <= new_array[index] and number > new_array[index-1]:
-                new_array.insert(index, number)
-                placed = True
-            else:
-                index += 1
-    return new_array
+def merge(array):
+    if len(array) > 1:
+        midpoint = len(array) // 2
+        left = array[midpoint:]
+        right = array[:midpoint]
+        
+        #Reference variables for indexes
+        ref1 = 0
+        ref2 = 0
+        ref3 = 0
 
+        #recursively call function
+        merge(left)
+        merge(right)
 
-def sort_lists():
-    for i in array1[1:]:
-        place_in_array(new_array, i)
-    for i in array2[1:]:
-        place_in_array(new_array, i)
+        while True:
+            if ref1 >= len(left) or ref2 >= len(right):
+                break
+            if left[ref1] >= right[ref2]: 
+                array[ref3] = right[ref2] 
+                ref2 = ref2 + 1
+            else: 
+                array[ref3] = left[ref1] 
+                ref1 = ref1 + 1
+            ref3 = ref3 + 1
 
-sort_lists()
-new_array.insert(0, len(new_array))
+        while True: 
+            if ref1 >= len(left):
+                break
+            array[ref3] = left[ref1] 
+            ref1 = ref1 + 1
+            ref3 = ref3 + 1
 
-for i in new_array:
+        while True: 
+            if ref2 >= len(right):
+                break
+            array[ref3] = right[ref2] 
+            ref2 = ref2 + 1
+            ref3 = ref3 + 1
+
+merge(array)
+for i in array:
     print(str(i), end=' ')
 print()
 
-output_file_name = "assignment1/problem1/" + sys.argv[2]
-sys.stdout = open(output_file_name, "w")
-for i in new_array:
-    print(str(i), end=' ')
-print()
+#output_file_name = sys.argv[2]
+#output_file_name = "my-output-1.txt"
+#sys.stdout = open(output_file_name, "w")
+#for i in new_array:
+#    print(str(i), end=' ')
+#print()
 
-sys.stdout = sys.__stdout__
+#sys.stdout = sys.__stdout__jjhhj
 
 
 

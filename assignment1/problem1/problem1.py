@@ -58,7 +58,7 @@ for i in new_array:
     print(str(i), end=' ')
 print()
 
-sys.stdout = open("my-output-1.txt", "w")
+sys.stdout = open("assignment1/problem1/my-output-1.txt", "w")
 for i in new_array:
     print(str(i), end=' ')
 print()

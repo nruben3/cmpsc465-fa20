@@ -60,17 +60,19 @@ def merge(array):
             ref2 = ref2 + 1
             ref3 = ref3 + 1
 
+string = ''
 merge(array)
+string = str(len(array)) + " "
 for i in array:
-    print(str(i), end=' ')
-print()
+    string = string + str(i) + ' '
+string = string[:-1]
+print(string)
 
 #output_file_name = sys.argv[2]
 #output_file_name = "my-output-1.txt"
 #sys.stdout = open(output_file_name, "w")
-#for i in new_array:
-#    print(str(i), end=' ')
-#print()
+
+#print(string)
 
 #sys.stdout = sys.__stdout__jjhhj
 

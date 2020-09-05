@@ -62,10 +62,10 @@ for i in array:
     print(str(i), end=' ')
 print()
 
-#output_file_name = "assignment1/problem2/" + sys.argv[2]
+#utput_file_name = "assignment1/problem2/" + sys.argv[2]
 #sys.stdout = open(output_file_name, "w")
 #for i in array:
-#    print(str(i), end=' ')
+ #   print(str(i), end=' ')
 #print()
 
 #sys.stdout = sys.__stdout__
